@@ -4,6 +4,43 @@
 
 系统采用 Spring Boot、Vue 3 和 PostgreSQL 的前后端分离架构，已打通商品、供应商、采购、销售、库存流水、多门店、经营报表、智能分析和账号安全等核心流程。业务系统负责计算和保存事实数据，大语言模型只负责生成经营说明与建议。
 
+
+## 项目截图
+
+| 经营概览 | 商品管理 |
+|---|---|
+| ![经营概览](docs/screenshots/02-overview.png) | ![商品管理](docs/screenshots/03-products.png) |
+
+| 销售出库 | 库存流水 |
+|---|---|
+| ![销售出库](docs/screenshots/04-sales.png) | ![库存流水](docs/screenshots/05-inventory.png) |
+
+| 经营分析 | 多门店对比 |
+|---|---|
+| ![经营分析](docs/screenshots/06-analytics.png) | ![多门店对比](docs/screenshots/07-stores.png) |
+
+## 核心功能
+
+- 商品、分类与供应商资料管理
+- 采购入库、销售出库与库存不足校验
+- 库存流水、盘点调整与全过程追溯
+- 多门店数据隔离、门店切换与经营对比
+- 销售额、成本、毛利、排行与库存预警报表
+- 经营周报与智能补货建议，模型不可用时自动使用本地规则
+- 管理员与店员权限、操作日志、注册及密码找回
+- Excel 批量导入导出、数据备份与 Docker Compose 一键部署
+
+## 技术栈
+
+| 层级 | 技术 |
+|---|---|
+| 前端 | Vue 3、Vite、JavaScript、CSS |
+| 后端 | Java 17、Spring Boot、Spring Data JPA、REST API |
+| 数据库 | PostgreSQL、H2（测试） |
+| 智能分析 | OpenAI API、结构化提示词、本地规则降级 |
+| 工程化 | Maven、Docker、Docker Compose、Nginx |
+| 测试 | JUnit 5、Spring MockMvc |
+
 PostgreSQL 数据目录是项目下的 `data\postgres`，也位于 E 盘。该目录已加入忽略规则，正式数据不要提交到代码仓库。
 
 前端目录是 `frontend`。安装 Node.js 后，在该目录执行 `npm.cmd install`，再执行 `npm.cmd run dev`，访问 `http://localhost:5173`。开发服务器会把 `/api` 请求转发到 Spring Boot 的 `http://localhost:8080`。

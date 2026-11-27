@@ -1,0 +1,12 @@
+target/
+.idea/
+*.iml
+*.log
+.env
+.env.local
+data/
+frontend/node_modules/
+frontend/dist/
+work/
+*.docx
+生成开题报告.ps1
